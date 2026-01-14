@@ -1,0 +1,267 @@
+:root {
+  --header-h: 56px;
+}
+
+.siteHeader {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: var(--header-h);
+}
+
+.site_container {
+  max-width: 1280px;
+  height: var(--header-h);
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 40px;
+}
+
+.nav {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  align-items: center;
+}
+
+.menu > li {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown_container {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 120px;
+  background: #fff;
+  list-style: none;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 2000;
+}
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+  display: block;
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.fullArea {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.submenu li:hover .fullArea {
+  background: #f5f5f5;
+}
+
+.authLinks {
+  display: none;
+  gap: 12px;
+}
+
+.authLink {
+  font-size: 14px;
+  padding: 6px 8px;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileMenuBtn {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.sideMenuOverlay {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+.sideMenu {
+  position: fixed;
+  top: var(--header-h);
+  right: 0;
+  width: 260px;
+  height: calc(100vh - var(--header-h));
+  background: #fff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.slideIn {
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sideDropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideDropdownBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+}
+
+.sideChevron {
+  transition: transform 0.2s ease;
+}
+
+.sideChevronOpen {
+  transform: rotate(180deg);
+}
+
+.sideSubmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sideSubmenuOpen {
+  max-height: 320px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 6px;
+}
+
+.sideSubmenu li .fullArea {
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.sideSubmenu li .fullArea:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.sideAuth {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sideAuth a,
+.sideAuth button {
+  display: block;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===== 데스크톱 전용 (1024px 이상) ===== */
+@media (min-width: 1024px) {
+  .site_container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .nav {
+    display: block;
+    justify-self: center;
+  }
+
+  .authLinks {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 12px;
+  }
+
+  .mobileMenuBtn,
+  .sideMenuOverlay {
+    display: none;
+  }
+}
+
+/* ===== 태블릿 & 모바일 (1023px 이하) ===== */
+@media (max-width: 1023px) {
+  .nav,
+  .authLinks {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: inline-flex;
+  }
+}

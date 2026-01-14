@@ -1,0 +1,202 @@
+.officerPage {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.noticeBtn {
+  padding: 8px 16px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.noticeBtn:hover {
+  background: #4b5563;
+}
+
+.subTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.manageBtn {
+  padding: 4px 8px;
+  margin: 2px;
+  border: 1px solid #ccc;
+  background: #f9fafb;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.manageBtn:hover {
+  background: #e5e7eb;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.modalForm label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.modalForm input {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.modalActions button {
+  min-width: 72px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.modalActions button:last-child {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.modalActions button:last-child:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* 반응형 (모바일) */
+@media (max-width: 768px) {
+  .actions {
+    justify-content: center;
+  }
+
+  .noticeBtn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 6px 0;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #475569;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  .manageBtn {
+    margin-top: 6px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    margin: 0 12px;
+  }
+  
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .modalActions button {
+    width: 100%;
+  }
+}

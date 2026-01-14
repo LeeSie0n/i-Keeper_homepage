@@ -1,0 +1,56 @@
+.detail {
+  padding: 40px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #6b7280; /* slate-500 */
+  margin-bottom: 20px;
+}
+
+.imageWrap {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.imageWrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151; /* slate-700 */
+  white-space: pre-line; /* \n 줄바꿈 반영 */
+  margin-bottom: 32px;
+}
+
+.actions button {
+  padding: 6px 12px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid #ccc;
+}
+
+.actions button:hover {
+  border: 1px solid #000;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+}

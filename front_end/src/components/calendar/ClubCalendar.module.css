@@ -1,0 +1,408 @@
+.calendarWrap {
+  border-radius: 16px;
+  background: #fff;
+  padding: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+:global(.fc .fc-toolbar) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+:global(.fc .fc-toolbar-chunk:first-child) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:global(.fc .fc-toolbar-title) {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: #0f172a;
+}
+
+:global(.fc .fc-button) {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:global(.fc .fc-button:hover) {
+  background: #000;
+  color: #fff;
+}
+
+:global(.fc .fc-button:disabled) {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+:global(.fc-prev-button),
+:global(.fc-next-button) {
+  width: 32px;
+  padding: 0;
+}
+
+:global(.fc-today-button) {
+  background: #fff;
+  color: #000;
+}
+
+:global(.fc-today-button:hover) {
+  background: #000;
+  color: #fff;
+}
+
+:global(.fc-button-group .fc-button) {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+:global(.fc-button-group .fc-button:hover) {
+  background: #000;
+  color: #fff;
+}
+
+:global(.fc-button-group .fc-button.fc-button-active) {
+  background: #000;
+  color: #fff;
+}
+
+:global(.fc .fc-col-header-cell) {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 8px 0;
+  border: 1px solid #e5e7eb;
+}
+
+:global(.fc .fc-daygrid-day) {
+  border-color: #e5e7eb;
+}
+
+:global(.fc .fc-daygrid-day-number) {
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+  padding: 4px;
+}
+
+:global(.fc .fc-day-today) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+:global(.fc-event) {
+  background: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+:global(.fc-daygrid-day.is-holiday .fc-daygrid-day-number) {
+  color: #dc2626;
+}
+
+:global(.fc .fc-col-header-cell.fc-day-sun),
+:global(.fc .fc-daygrid-day.fc-day-sun .fc-daygrid-day-number) {
+  color: #dc2626;
+}
+
+:global(.fc .fc-col-header-cell.fc-day-sat),
+:global(.fc .fc-daygrid-day.fc-day-sat .fc-daygrid-day-number) {
+  color: #2563eb;
+}
+
+:global(.fc .fc-daygrid-day.is-holiday .fc-daygrid-day-number) {
+  color: #dc2626;
+}
+
+:global(.fc-daygrid-day .holiday-event) {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 2px;
+  text-align: center;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.calendarTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.addEventBtn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 9999px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.addEventBtn:hover {
+  background-color: #333;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modalLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 4px;
+}
+
+.modalInput {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.modalActions button {
+  min-width: 72px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.modalActions button:last-child {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.modalActions button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* 반응형 */
+
+@media (max-width: 1024px) {
+  .calendarWrap {
+    padding: 10px;
+  }
+
+  .calendarTitle {
+    font-size: 1.125rem;
+  }
+
+  .addEventBtn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  :global(.fc .fc-toolbar-title) {
+    font-size: 15px;
+  }
+
+  :global(.fc .fc-button) {
+    font-size: 13px;
+    height: 30px;
+    padding: 0 8px;
+  }
+
+  :global(.fc-prev-button),
+  :global(.fc-next-button) {
+    width: 30px;
+  }
+}
+
+/* 768px 이하(모바일): 헤더/툴바를 세로 스택으로 */
+@media (max-width: 768px) {
+  .calendarWrap {
+    padding: 10px;
+  }
+
+  /* 상단 "Club Calendar + 일정추가" 영역을 세로로 */
+  .calendarHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .calendarTitle {
+    font-size: 1.05rem;
+  }
+
+  .addEventBtn {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* FullCalendar 툴바를 세로로 쌓아서 겹침 방지 */
+  :global(.fc .fc-toolbar) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  /* 각 chunk는 줄바꿈 허용 + 버튼 정렬 */
+  :global(.fc .fc-toolbar-chunk) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  /* 타이틀 중앙정렬 + 작은 글씨 */
+  :global(.fc .fc-toolbar-title) {
+    left: auto;              /* 기존 absolute centering 방식 제거 */
+    transform: none;         /* 기존 translate 제거 */
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* 버튼 크기/간격을 모바일에 맞게 */
+  :global(.fc .fc-button) {
+    height: 30px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  :global(.fc-prev-button),
+  :global(.fc-next-button) {
+    width: 30px;
+  }
+
+  /* 요일/날짜/이벤트 텍스트를 조금 더 줄여서 공간 확보 */
+  :global(.fc .fc-col-header-cell) {
+    padding: 6px 0;
+  }
+
+  :global(.fc .fc-daygrid-day-number) {
+    font-size: 11px;
+    padding: 3px;
+  }
+
+  :global(.fc-event) {
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+
+  :global(.fc-daygrid-day .holiday-event) {
+    font-size: 0.7rem;
+  }
+
+  /* 모달: 작은 화면에서 화면 밖으로 나가지 않게 */
+  .modal {
+    max-width: none;
+    width: min(92vw, 420px);
+    max-height: 86vh;
+    overflow: auto;
+    padding: 18px 16px;
+  }
+
+  .modalTitle {
+    font-size: 16px;
+  }
+
+  /* 모달 버튼을 세로 스택으로 */
+  .modalActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modalActions button {
+    width: 100%;
+    min-width: auto;
+    padding: 10px 12px;
+  }
+}
+
+/* 420px 이하(아주 작은 모바일): 버튼 더 컴팩트하게 */
+@media (max-width: 420px) {
+  :global(.fc .fc-button) {
+    height: 28px;
+    padding: 0 7px;
+    font-size: 11px;
+  }
+
+  :global(.fc-prev-button),
+  :global(.fc-next-button) {
+    width: 28px;
+  }
+
+  :global(.fc .fc-toolbar-title) {
+    font-size: 13px;
+  }
+}
