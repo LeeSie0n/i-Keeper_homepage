@@ -13,20 +13,13 @@ Our team consists of:
 [Member] Jung Ji-hyo
 [Member] Kim Si-eun
 
-All team members are majoring in Computer Engineering at Daegu Catholic University.
+We are all majoring in computer engineering at Daegu Catholic University.
+The copyright to the code of the project is held by my team. If you want to use it, please contact me in advance.
 
 ## Contact Information
-If you have any questions or inquiries regarding this project, please feel free to contact us:
-
-📧 Email: sieon0712@cu.ac.kr
-
+If you have any questions or inquiries, please feel free to contact us at sieon0712@cu.ac.kr
 We will respond promptly.
 
-Copyright Notice
-
-© Daegu Catholic University & i-Keeper Team. All rights reserved.
-
-All resources related to this project are copyrighted by the i-Keeper team and Daegu Catholic University.
-Unauthorized use, reproduction, or distribution is strictly prohibited.
-
-If you wish to use any part of the source code associated with this project, please contact us in advance for approval.
+## Copyright Notice
+This project and its associated resources are copyrighted by our team and Daegu Catholic University. Unauthorized use is prohibited.
+If you wish to use the code or dataset associated with this project, please contact us for approval.
