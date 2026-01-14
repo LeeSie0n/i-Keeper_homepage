@@ -1,4 +1,4 @@
-### i-Keeper homepage
+# i-Keeper homepage
 ## Introduction
 This project is a web-based platform that consolidates essential features required for the activities of the i-Keeper Security & Development Club at Daegu Catholic University.
 
