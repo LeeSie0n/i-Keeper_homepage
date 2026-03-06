@@ -5,7 +5,7 @@ This project is a web-based platform that consolidates essential features requir
 Although the source code was initially intended to remain private, it has been made public to facilitate future feature extensions and contributions by club members. The project is designed to serve as a centralized and practical homepage for efficient club operation and collaboration.
 
 ## Team Information
-Our team consists of:
+Our team consists of
 
 [Leader] Lee Si-eon
 [Member] Eun Eun-sol
